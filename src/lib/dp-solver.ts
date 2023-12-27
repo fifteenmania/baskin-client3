@@ -1,4 +1,4 @@
-export class HeuristicSolver {
+export class DpSolver {
   numPlayer: number
   maxCall: number
   numEnd: number
