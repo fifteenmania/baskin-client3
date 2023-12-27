@@ -1,7 +1,11 @@
+import { GnbWrapper } from './_components/gnb-wrapper'
 
-export default function Home() {
+export default function () {
   return (
-    <main role="main" className="">
-    </main>
+    <GnbWrapper>
+      <main role="main" className="h-full w-full">
+        본문 내용
+      </main>
+    </GnbWrapper>
   )
 }
