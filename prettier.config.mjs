@@ -7,6 +7,7 @@ const config = {
   singleQuote: true,
   arrowParens: 'avoid',
   endOfLine: 'auto',
+  printWidth: 80,
 }
 
 export default config
