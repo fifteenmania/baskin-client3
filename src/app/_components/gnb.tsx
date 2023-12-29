@@ -1,4 +1,5 @@
 import { svgAssets } from '@/asset/svg'
+import Link from 'next/link'
 
 export function Gnb() {
   return (
@@ -16,7 +17,11 @@ export function Gnb() {
             {svgAssets.IcMenu}
           </label>
         </div>
-        <div className="flex-1 px-2 mx-2">Thirt-One Simulator</div>
+        <div className="flex-1 px-2 mx-2">
+          <Link href="/" className="btn btn-ghost">
+            The Thirt-One Simulator
+          </Link>
+        </div>
       </div>
     </div>
   )

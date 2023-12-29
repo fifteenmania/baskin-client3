@@ -1,3 +1,12 @@
+'use client'
+import { BarGraph } from './bar-graph'
+import { ControlPanel } from './control-panel'
+
 export default function () {
-  return <div>그래프</div>
+  return (
+    <div className="flex flex-col">
+      <ControlPanel />
+      <BarGraph />
+    </div>
+  )
 }

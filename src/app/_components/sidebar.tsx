@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export function Sidebar() {
   return (
     <div className="drawer-side z-40 scroll-smooth">
@@ -8,10 +10,10 @@ export function Sidebar() {
       ></label>
       <ul className="menu p-4 w-80 min-h-full bg-base-200">
         <li>
-          <a>승률 계산기</a>
+          <Link href="/calculator">승률 계산기</Link>
         </li>
         <li>
-          <a>싱글 플레이</a>
+          <Link href="/singleplay">싱글 플레이</Link>
         </li>
       </ul>
     </div>
