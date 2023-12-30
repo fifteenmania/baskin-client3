@@ -1,11 +1,7 @@
-'use client'
-import dynamic from 'next/dynamic'
 import { ApexOptions } from 'apexcharts'
 import ApexChart from '../_components/apex-chart'
-
-const Chart = dynamic(() => import('react-apexcharts'), {
-  ssr: false,
-})
+import { useEffect } from 'react'
+import { DpSolver } from '@/lib/dp-solver'
 
 export function BarGraph() {
   const options: ApexOptions = {
@@ -17,6 +13,11 @@ export function BarGraph() {
       categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9'],
     },
   }
+  useEffect(() => {
+    const solver = new DpSolver()
+    const mat = solver.getLoseProbMatrix(3, 3, 31)
+    console.log(mat)
+  }, [])
 
   return (
     <div className="h-full w-full">
