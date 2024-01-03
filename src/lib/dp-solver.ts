@@ -23,15 +23,16 @@ export class DpSolver {
       // find min of the first column
       let minOfFirstCol = Infinity
       let minRowCount = 0
-      for (let minRow = loopupStartIdx; minRow < row; minRow++) {
-        if (minOfFirstCol > loseProbMat[minRow][0]) {
-          minOfFirstCol = loseProbMat[minRow][0]
-          minRowCount = 1
-        } else if (minOfFirstCol === loseProbMat[minRow][0]) {
-          minRowCount++
-        }
-      }
-
+      // for (let minRow = loopupStartIdx; minRow < row; minRow++) {
+      //   if (minOfFirstCol > loseProbMat[minRow][0]) {
+      //     minOfFirstCol = loseProbMat[minRow][0]
+      //     minRowCount = 1
+      //   } else if (minOfFirstCol === loseProbMat[minRow][0]) {
+      //     minRowCount++
+      //   }
+      // }
+      minOfFirstCol = Math.min(...loseProbMat.slice(loopupStartIdx, row).map(row => row[0]))
+      minRowCount = loseProbMat.slice(loopupStartIdx, row).filter(row => row[0] === minOfFirstCol).length
       for (let minRow = loopupStartIdx; minRow < row; minRow++) {
         if (minOfFirstCol === loseProbMat[minRow][0]) {
           for (let col = 0; col < numPlayer; col++) {
@@ -42,6 +43,18 @@ export class DpSolver {
       }
       loseProbMat.push(newRow)
     }
+    // revserse the matrix
+    loseProbMat.reverse()
     return loseProbMat
+  }
+
+  getWinProbMatrix(
+    numPlayer: number,
+    maxCall: number,
+    numEnd: number,
+  ): number[][] {
+    const loseProbMat = this.getLoseProbMatrix(numPlayer, maxCall, numEnd)
+    const winProbMat = loseProbMat.map(row => row.map(prob => 1 - prob))
+    return winProbMat
   }
 }

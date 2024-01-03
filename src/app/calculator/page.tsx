@@ -1,12 +1,15 @@
 'use client'
-import { BarGraph } from './bar-graph'
+import { RecoilRoot } from 'recoil'
+import { NumbarWinRateGraph } from './number-win-rate-graph'
 import { ControlPanel } from './control-panel'
 
 export default function () {
   return (
-    <div className="flex flex-col">
-      <ControlPanel />
-      <BarGraph />
-    </div>
+    <RecoilRoot>
+      <div className="flex flex-col w-full">
+        <ControlPanel />
+        <NumbarWinRateGraph />
+      </div>
+    </RecoilRoot>
   )
 }
