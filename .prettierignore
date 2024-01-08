@@ -1,0 +1,7 @@
+.yarn
+node_modules
+.gitignore
+packages/web/.next
+packages/web/coverage
+packages/web/public
+packages/web/.env*
