@@ -1,7 +1,7 @@
 'use client'
 import { RecoilRoot } from 'recoil'
 import { NumbarWinRateGraph } from './number-win-rate-graph'
-import { ControlPanel } from './control-panel'
+import { ControlPanel } from '../_components/control-panel'
 
 export default function () {
   return (

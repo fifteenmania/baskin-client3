@@ -1,9 +1,9 @@
 'use client'
 
-import { maxCallAtom } from '@/recoil/calculator/max-call-atom'
-import { numEndAtom } from '@/recoil/calculator/num-end-atom'
-import { numPlayerAtom } from '@/recoil/calculator/num-player-atom'
-import { useRecoilState, useRecoilValue } from 'recoil'
+import { maxCallAtom } from '@/recoil/max-call-atom'
+import { numEndAtom } from '@/recoil/num-end-atom'
+import { numPlayerAtom } from '@/recoil/num-player-atom'
+import { useRecoilState } from 'recoil'
 
 export function ControlPanel() {
   const [numPlayer, setNumPlayer] = useRecoilState(numPlayerAtom)

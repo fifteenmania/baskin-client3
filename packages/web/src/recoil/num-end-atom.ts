@@ -1,7 +1,7 @@
 import { atom } from 'recoil'
-import { recoilKeys } from '../recoil-keys'
+import { recoilKeys } from './recoil-keys'
 
 export const numEndAtom = atom({
-  key: recoilKeys.calculator.numEnd,
+  key: recoilKeys.numEnd,
   default: 31,
 })

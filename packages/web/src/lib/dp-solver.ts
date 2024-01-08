@@ -31,8 +31,12 @@ export class DpSolver {
       //     minRowCount++
       //   }
       // }
-      minOfFirstCol = Math.min(...loseProbMat.slice(loopupStartIdx, row).map(row => row[0]))
-      minRowCount = loseProbMat.slice(loopupStartIdx, row).filter(row => row[0] === minOfFirstCol).length
+      minOfFirstCol = Math.min(
+        ...loseProbMat.slice(loopupStartIdx, row).map(row => row[0]),
+      )
+      minRowCount = loseProbMat
+        .slice(loopupStartIdx, row)
+        .filter(row => row[0] === minOfFirstCol).length
       for (let minRow = loopupStartIdx; minRow < row; minRow++) {
         if (minOfFirstCol === loseProbMat[minRow][0]) {
           for (let col = 0; col < numPlayer; col++) {

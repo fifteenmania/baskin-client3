@@ -4,9 +4,9 @@ import ApexChart from '../_components/apex-chart'
 import { useEffect, useState, useTransition } from 'react'
 import { DpSolver } from '@/lib/dp-solver'
 import { useRecoilValue } from 'recoil'
-import { maxCallAtom } from '@/recoil/calculator/max-call-atom'
-import { numEndAtom } from '@/recoil/calculator/num-end-atom'
-import { numPlayerAtom } from '@/recoil/calculator/num-player-atom'
+import { maxCallAtom } from '@/recoil/max-call-atom'
+import { numEndAtom } from '@/recoil/num-end-atom'
+import { numPlayerAtom } from '@/recoil/num-player-atom'
 
 export function NumbarWinRateGraph() {
   const maxCall = useRecoilValue(maxCallAtom)
@@ -76,7 +76,9 @@ export function NumbarWinRateGraph() {
   }, [numPlayer, maxCall, numEnd])
   return (
     <div className="h-full w-full">
-      {isTranstion && (numEnd > 50) ? (
+      <h2 className="">기대 승률 그래프</h2>
+      <p>해당 숫자까지 불렀을 때의 기대 승률입니다.</p>
+      {isTranstion && numEnd > 50 ? (
         <div className="h-full w-full flex justify-center items-center py-10">
           <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-32 w-32"></div>
         </div>
